@@ -1,0 +1,120 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[margin=0.8in]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\title{\texttt{GUIDANCE AND CONTROL SYMPOSIUM}}
+\author{\texttt{Dr. Helmut Hölzer }\footnote{Retired from U.S. National Aeronautics Space Association. Former Director of Computation Center, George C. Marshall Space Flight Center, Huntsville, Alabama. Former consultant to ER and O Spacelab Project. Former Division Chief of Guidance and Navigation, Peenemünde , Germany.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+In today's development, test, and operation of space vehicles, electronic computers are a very important tool. We can ``fly'' a complete space mission a thousand times ``in a computer'' before we risk the real launch. In the Saturn-Apollo project, for instance, much testing and a tremendous amount of all kinds of computer simulations made it possible that the second Saturn flight could be already manned, while in the development of the very first long range rocket, the V-2, or as it was called by the engineers the A-4, many hundreds of launches were necessary to arrive at a reliable design.
+
+Well, one of the reasons for this is that at that time there were no electronic computers, neither of the digital nor of the analog variety. In this short presentation I would like to lead you back to the time around 1940, when these electronic computers did not give us any trouble yet, but when the predecessors of our large space launchers gave us sometimes more headaches than we could digest.
+
+We started out the A-4 development with no onboard computers, no ground check-out computers, and no Simulators for testing subsystems in the laboratory, and I would like to show you how what we today call Electronic Analog Computers came into being and how the very first ones of them were used. So my report will not deal with new ideas, which is customary in addresses like this one, but will show you how things were done about 36 years ago, which might after all be new to some of you.
+
+In the year 1940, rocket control systems were tested in the following way: The entire control system consisting of gyros, rate gyros, servomotors, jet vanes and other ingredients was installed in the rocket (sometimes in a so-called ``battleship version'' of the latter). The rocket, including motor, was mounted in a test stand so it could move around the center of suspension like a pendulum and then a stability test with ignited motor was performed. This cumbersome way of doing business, however was soon to a large extent replaced by a mechanical Simulator, which consisted mainly of a pendulum equipped with torque motor, potentiometer pick up, and an eddie current brake.
+
+The pendulum could be tilted to simulate the rocket dynamics at different flight situations. This method and the entire machinery was developed by Dr. Walter Haeussermann. Dr. Haeussermann, Mr. Boehm ($+$) and myself were among other members of Dr. Ernst A. Steinhoff's department (guidance, control, flight mechanics, and on-board instrumentation). About the same time, Joseph Boehm designed a tiltable table which allowed the addition of hinge moments, the mounting of the original gyroset and the servomotors. These two electro-mechanical simulators were a big improvement over the costly test stand method.
+
+The inputs of these electro-mechanical simulators came from gyroscopes which respond only to angular motions; thus they simulated only the rotational degrees of freedom. The remote control system, which used the lateral motion of the rocket, or in other words the lateral motion of its center of gravity as input, naturally could not use this kind-of simulators anymore. The mechanically-minded engineers among the developers of the A-4 naturally tried to build a mechanical simulator for these lateral motions of the rocket in flight, but they had the experience that the slower and the more well-damped the motion of the system became, the more those undesirable effects like mechanical friction, back lash, etc. came to the foreground. Since portions of the original equipment like gyros were used in these simulators, they had to work in real time. While the addition of the mechanical simulator already was a big step ahead, involvement of concurrent rocket engine tests still was a time-consuming test method, Since, after the test, the rocket engine had to be serviced and returned to a ready status, using large amounts of fuel with the associated logistics, manpower, and time, while still was not providing a complete enough simulation. The lateral motion elements could not be neglected, real-time analysis would be difficult to achieve, and the above side-effects would not be part of the real-time flight condition. This fact led to the conclusion that after rocket engine response data would be available, except for the use of onboard instruments, the mechanical flight simulation equipment had to be replaced by electronic simulation equipment, into which real input data could be inserted at will and a much wider data spectrum investigated to also obtain insight into marginal or even negative stability ranges. Eliminating the cumbersome rocket engine tests permitted rapid performance of many test runs of flight simulation with much less time, manpower, and cost involved. This would allow test deadlines necessary to materialize the operational readiness dates to be met, which were impossible to achieve by use of the then current mechanical method which would have left wide ranges of operational conditions unresearched.
+
+It seemed, therefore, more favorable to use the electrical analogue of these mechanical systems, which are circuits consisting of capacitors, inductors, resistors and amplifiers. The name electronic analogue or electronic modelling soon became a well known word of the rocket dictionary of that time.
+
+After initially trying to find electrical analogies for the system under investigation more by intuition than by systematical approach, it became soon evident that some order had to be brought into that process. As usual, the first step---so also in this case---was to arrive at an exact mathematical description which in general turned out to consist of differential equations, naturally non-linear ones. The next step was to design electronic circuits which represented the elementary mathematical expressions of which these equations consisted, and of their links given by mathematical signs.
+
+We list the most important ones:
+\begin{enumerate}[label={}, noitemsep]
+  \item Addition and Subtraction
+  \item Multiplication and exponentiation
+  \item Division and roots
+  \item Integration
+  \item Differentiation
+  \item Functions of functions.
+\end{enumerate}
+
+Without doubt, integration in the case of differential equations is the most important one, so we will look at this one first. (Figure 1). Looking at this circuitry, please remember that at that time transistors were still unknown and that electronic tubes were the only available active components. Diodes were the only solid state devices. In this diagram, a circuit is shown consisting of (from left to right) an AC amplifier, a phase bridge rectifier, an RC link with large time constant, a modulator with suppressed carrier and another AC amplifier. I used AC amplifiers, since my DC amplifiers refused to be stable enough to do the job; therefore, I used the demodulation of the signal before the RC link and its re-modulation afterwards. For these two operations copper oxide solid state rectifiers were used, the same type rectifiers which were used in electrical measuring instruments at that time. They showed excellent temperature, moisture, and overload stability and gave considerably less trouble than the unstabilized DC amplifiers. In order to arrive at an infinite time constant for the RC combination, which is necessary for exact integration, a positive feedback was used and adjusted in such a way that the integrator output with zero input remained zero (or constant).
+
+In other words, it compensated for the losses of the capacitor itself and of the losses caused by the various resistors of the circuit, and for the voltage which was building up in the capacitor.
+
+The AC arrangement had other advantages besides having absolutely stable amplifiers (no AC in, no AC out).
+
+Since the transformers at the input of the amplifiers were not loaded, addition and subtraction could be performed by connecting them serially at the secondary side. You have to remember that, in today's familiar terminology, electron tubes behaved similar to MOS FET-s, the grid being the gate. The electron source, a filament, had to be heated. Fortunately, the grid did not consume any power if the bias was right.
+
+Multiplication and squaring was performed with ring modulators as Figure 2 shows. Figure 2a shows the case where the two functions to be multiplied are available from ``DC'' sources, and where the product shows up as the envelope of an AC voltage with suppressed carrier. Please note the phase jump when the value changes sign. Figure 2b shows a scheme for a(t) and b(t) to be See of alternating voltages and the result (product) to be ``DC''.
+
+It is also easy to devise a set up with one factor DC and the other one AC, etc. They are not shown here.
+
+Differentiation has resistor and capacitor in the RC combination exchanged and is shown in Figure 3. It can easily be seen from Figures 4a and 4 that feedback circuits improve accuracy.
+
+Even double differentiators and double integrators were built; the latter one is shown in Figure llb as used in an application. The feedback networks, to compensate for losses, are more complex in this case. The proof that they do the trick is not very complicated.
+
+The integrator was soon improved in the following way:
+
+As shown in Figure 5a, one can use a normal, straightforward amplifier without any complex network in the forward branch and put the impedances only in the feedback line. This idea is documented in the dissertation Nr. D. 87 dated Jan ll, 1946 presented to the Department of Mathematics and Natural Sciences of the Institute of Technology at Darmstadt, Germany, on page 20, chapter ll.
+
+An integrator along this line was soon afterwards built in the United States, tested and used by Messrs. Hans Hosenthin and Otto Hirschler in an AC analog computer to simulate the G2C system dynamics of the U.S. Army Redstone, Jupiter and Jupiter C (Explorer I) missiles. A principal diagram of it is shown in Figure 5b. The amplifier is still AC and the link between the capacitor and the amplifier is a ring modulator which made the capacitor ``think'' that there was a DC amplifier or the AC amplifier ``think'' that there was an ``AC condenser.'' As the equation in Figure 5b indicates, the condenser feedback has to be negative. The term $1/A$ means a positive feedback, which as usual has to be carefully adjusted to avoid instability. If A is high enough, it can be neglected.
+
+In 1950, when the chopper stabilized DC amplifier was invented by Goldberg, modern high precision DC analog computers became a reality. But now back to 1941 with some words about the division and square roots operations. Division was based on the fact that the steady state solution of the differential equation
+$$
+  \dfrac{1}{A}\dot{y}+ay=b
+$$
+is $y=b/a$ (a = positive), if $b$ and $a$ are constants. The formation of the quotient $y=b/a$ is delayed by the transient which, however, can be made as short as desired by increasing $A$. If $A$ is large enough, the coefficients $a$ and $b$ can even be time-variable. See Figure 6. A very large amplification A even permits working without an integrator, thereby entirely avoiding the time delay brought in by the transient. But now a static error shows up, Since $A$, after all, is not infinite. This error, however, can be taken care of as follows:
+
+From the second diagram in Figure 6 the equation follows
+$$
+  \dfrac{1}{A}\dot{y}(t)+ay=b(t),
+$$
+whereas it is desired to have $0=b(t)-ya(t)$, whereby $y$ would be exactly equal to $b(t)/a(t)$. This can be achieved by adding the constant $-1/A$ permanently at the $a(t)$ input. The equation is now
+$$
+  \dfrac{1}{A}y=b(t)-y\left(a(t)-\dfrac{1}{A}\right)
+$$
+which gives the exact result y = b(t). A division circuit as shown in Figure 7 using a self balancing bridge was soon discarded because a motor which was fast enough (small time constant) was not available.
+
+The realization of the square root operation followed similar reasoning as division. See Figure 8. Here it is also possible to avoid the small error introduced by the finite $A$ by basing permanently with $-1/A$.
+
+It was also known at that time how to solve systems of differential equations. Figure 9 gives an example and is self explanatory.
+
+Systems of simultaneous linear equations were solved by artificially introducing terms containing derivatives of the variables along the principal diagonal of the matrix, thereby transforming the system of simultaneous linear equations into a system of linear differential equations of the first order. One has only to wait for the steady state to occur, if one exists, which gives the solution. Figure 10 shows the setup for functions of functions using a light armature motor with position feedback as input for the first function and a cam for the second one. As a last example of what was already possible at that time, Figure lla and b show the diagram for solving the differential equation
+$$
+ y\ddot{y}+f_{1}(t)y^{2}=f_{2}
+$$
+
+The diagrams are, for today's experts, self-explanatory. At that time, it took a lot of convincing that things like this really could be done. Most mathematicians took the position that it was a crime to mistreat their science this way, and if ideas like those made progress, a generation of ``non-thinkers'' would be created.
+
+What I described to you so far, was necessary to simulate the rocket and it's dynamical behavior as exactly as possible. As I mentioned, it grew out of the necessity to avoid most of the costly testing of original equipment in the test stand or even in free flight. The development of guidance and control equipment still followed the conventional design practices-part mechanical, hydraulic, pneumatic, or heavy current engineering.
+
+It was only natural now to use the above described ``analog'' building blocks of mathematical expressions also for realizing these guidance and control equations for on-board use. In this case, high accuracy was only necessary for the ``steady state'' portion; for the transient, however, it was sufficient to show good damping properties. The design should be as simple, primitive, and as inexpensive as possible; exact linearity was also not necessary. For these reasons, the feedback circuits in the differentiators and integrators were omitted. The AC amplifiers, modulators, and demodulators remained. Figure 12 shows the principal diagram of the on-board, three-axis control system including the on-board portion of the guide-plane system.
+
+Looking first at the attitude control portion, I have shown from right to left the yaw, pitch, and roll potentiometers of the position gyros (please note that there are no rate gyros); next we see three boxes with RC networks which perform an approximate simple and double differentiation of the gyro output value, good enough to stabilize the system. Next come the modulators, and a set of transformers to distribute the commands from three-axis to four vanes and finally AC amplifiers and demodulators.
+
+The guidance portion of the diagram is shown in the top line of boxes. The right hand box shows the guide p n receiver and demodulator, which delivers the guidance signal. This Signal is approximately differentiated and approximately integrated once. The latter operation was necessary to compensate for permanent disturbances like wind drift; the first is necessary for the stabilization of the lateral motion of the rocket. The calculations leading to the dimensioning of the stabilization networks are omitted from this report because of the limited time available.
+
+This guidance and control system was first installed on board of airplanes for flight testing (after it performed well in the simulator). After numerous initially problematic, but finally very successful flights, which were surveyed from the ground by theodolites, the equipment was installed in the rockets and proved here to be very successful also. Readjustment from the use in airplanes to the use in rockets were easily made by changing resistors.
+
+As also mentioned before, another application of the new analog techniques was the simulation of the complete system. Figure 13 shows such a set-up for two degrees of freedom of the rocket: yaw (motion around the C.G.) and the motion of the C.G. itself in the electro-magnetic field of the guide plane.
+
+In order to keep the position gyro in the loop, it was necessary to design a motion table on which the gyros could be mounted. This table was driven by the derivative of the gyro position. It performed the last integration itself, but was supervised by an electronic integrator which worked in parallel. The guide plane RF receiver was also included in the loop. It received signals which were produced by a simulator of the switching mechanism of the guide plane transmitter. It is shown only as a box with the diagram omitted. At the left hand side of Figure 13 the original servo hydraulics loaded by springs are shown; the springs serve to simulate the hinge moments of the jet vanes. This simulation testbed, containing four integrators besides the original guidance and control equipment, was built in several sets. One of them was taken to the U.S. after the war and was in use for several more years before it was taken out of service.
+
+Summarizing, the history of the evolution of electronic flight control systems and the parallel development of motion and stability simulators, the then new technology can be credited with the achievement of the first successful launching of an A-4 covering the distance of 112.5 miles, after two only partially successful launches, during which transonic problems affected the vehicle dynamic stability in the first case, and cross-coupling occurred between the three stability axes at large angles of attack in the second case, leading to a break-up of the A-4 in the second case at Mach~2.0. This first success came on 3 October 1942.
+
+Availability of this flight control and simulation equipment enhanced development progress much more than even the most optimistic team members initially expected. Use of this equipment together with electro-mechanical pendulous motion simulators (Design Haeussermann) in-the development of the Anti-Aircraft Missile ``Wasserfall'' very quickly led to intercept simulators, an area Dr. Oswald Lange and his associates (now U.S. Army Missile Command) pioneered, deriving optimum pursuit and intercept methods. Much of: this work has been described in the Peenemünde  Archives, repositories of which exist at Wright-Patterson AFB, Huntsville, Alabama, and in the German Museum at Munich.
+
+The first real-time flight test control applications of these methods were developed at the Air Force Missile Development Center at Holloman Air Force Base in the early fifties and found their first application in real-time test control at the White Sands Missile Range in the early 1960's. The experience collected with this equipment, which was greatly refined between 1945 and 1965, found its application in the development of the Redstone, Jupiter, and Saturn Missiles and launch vehicle families, with one of these Redstones, in a two-stage configuration, flying 3000 miles, during pre-Atlas times, and a second one, using advanced fuels, showing that the combination of these two features could reach orbit. Concurrent with the above-described developments between 1939 and 1945 went the development of a variety of telemeter systems, among these AM, FM, pulse-code and pulse-time, and multiplexing methods, most of these still in use today and of radio and optical-trajectory tracking networks, which again, during the past 30 years, underwent progressive refinement to reach today's state-of-the-art.
+
+As today, periodic reviews of progress of the scientific laboratories' work were conducted by teams of other laboratories and the leadership of outstanding university and industrial laboratories. In this particular case, it was the Director-General of the AEG, the largest industrial conglomerate of the German Electrical Industry. Dr. Dornberger, the former Chief of Peenemünde , recounts this review in his book V-2, page 87, as follows:
+
+\begin{quote}
+  ``\textit{The work done here under your supervision recalls the historic achievements of technology. I entered your establishment firmly determined to find ways and means of getting help for you from the German Electrical Industry. Now, after seeing the work you have done, and the problems you have tackled, I shall ask you to help the German Electrical Industry! Thanks to perfectly equipped laboratories and experimental departments, and to a great number of devoted engineers, you have in several fields of work, but especially in high-frequency and guidance techniques, forged years ahead of the technological stage reached by the German Electrical Industry. I should now like to thank you for the freedom of inspection accorded to me.}''
+\end{quote}
+
+Dr. Dornberger, who turned 81 years about a month ago regrets that he, for health reasons cannot be with us today. He is one of the early promoters of what we call today the ``Space Shuttle'' when he was at Wright Field in the late 1940's and was Chief Engineer and Vice President of Bell Aerospace in the 1950's. He is the one who masterminded the transition from the Reinickendorf Rocket Experiment Center by way of the Propulsion Development Center of Kummersdorf to the Ballistic Rocket Research Center of Peenemünde , never loosing sight of its eventual potential to achieve ``Space-flight.'' Among those honored today are several whose engineering careers started at Reinickendorf, Kummersdorf, or Peenemünde  and who outstandingly contributed to the realization of the Space Age in a multitude of brilliant ideas and native ingenuity!
+
+\end{document}
