@@ -21,7 +21,7 @@
 \tableofcontents
 
 \newpage
-\section{The Control Problem and the Required Control Circuits}
+\section[The Control Problem and the Required Control Circuits]{The Control Problem and the Required Control\\Circuits}
 
 The long range rocket V-2 was designed to transport its warhead to a target about 250 km away. It was to reach this target as an unpropelled projectile after the thrust had been cut off. Simple calculations showed that the maximum range for a given velocity at all-burnt was obtained with an angle of 49$^\circ$ between trajectory tangent and the vertical. Because of the starting weight of 12.5 tons, the normal type of inclined launching ramp would have been too heavy. Thus the rocket had to undergo a change of direction after launching; for this a control loop, the so-called pitch control, was required.
 
@@ -69,12 +69,12 @@ Special care has to be taken with regard to the correct position of the assigned
 
 \subsection{Fuel Control}
 
-\subsubsection{General}
+\subsubsection*{General}
 
 For the range of the rocket we have as first approximation
 
 \begin{equation}
-  X=f(v_{1})\quad\quad v_{1}=\text{= fuel cut-off or all-burnt velocity).}
+  X=f(v_{1})\quad\quad v_{1}=\text{ fuel cut-off or all-burnt velocity).}
 \end{equation}
 
 The fuel cut-off unit had to shut down the fuel supply when the rocket had
@@ -92,7 +92,7 @@ If the velocity measuring equipment was stationed on the ground an additional ra
 
 The quantity $A$ is approximately proportional to the all-burnt velocity $v_{1}^{*}$. However, since the rocket velocity still increases in the time between the response of the comparator and the complete cessation of combustion, $A$ was actually chosen to be proportional to a velocity which was smaller than the all-burnt velocity assigned by the mean value $\Delta v_{1}^{*}$ of this increase $\Delta v_{1} $. Since the variance of $\Delta v_{1}$ , was relatively large, $\Delta v_{1}$  was reduced by reducing the thrust immediately before cut-off in the ratio 4:1 . This produced a thrust-time curve as shown in Fig. 7. Further corrections of $A$ will be discussed later-
 
-\subsubsection{Description of the Two Systems}
+\subsubsection*{Description of the Two Systems}
 
 For the V-2 two different fuel shut-down systems were developed:
 
@@ -103,10 +103,10 @@ For the V-2 two different fuel shut-down systems were developed:
 
   \item Integration of the acceleration of the rocket.
 
-Here one tried to measure the acceleration of the rocket $dv_{1}/dt$ in the direction of the tangent of the trajectory, and the ascertained value was integrated. Because of the gravitational acceleration one obtained the value
+Here one tried to measure the acceleration of the rocket $dv_{1}/ dt$ in the direction of the tangent of the trajectory, and the ascertained value was integrated. Because of the gravitational acceleration one obtained the value
 
 \begin{equation}
-  v_{1}0\int_{0}^{1}\frac{dv_{1}}{dt}dt+\int_{0}^{t}g\cos\nu dt,
+  v_{1}0\int_{0}^{1}\frac{dv_{1}}{dt}dt+\int_{0}^{t}g\cos{\nu dt},
 \end{equation}
 
 where $\nu$ is the angle of inclination of the trajectory.
@@ -114,7 +114,7 @@ where $\nu$ is the angle of inclination of the trajectory.
 The first integral represents the rocket velocity, and therefore the second term has to be calculated beforehand for the mean interval $t_{1}^{*}$ between start and all-burnt, and then fed into the comparator
 
 \begin{equation}
-  A_{i}\approx v_{1}^{*}+\int_{0}^{t_{1}}g\cos\nu dt-\Delta v_{1}^{*}.
+  A_{i}\sim v_{1}^{*}+\int_{0}^{t_{1}}g\cos{\nu dt}-\Delta v_{1}^{*}.
 \end{equation}
 
 The correction is, as was stated above, only correct in the average. Another inaccuracy is unavoidable; the accelerometer can be installed in the direction of the rocket axis but not of the trajectory tangent. But considering the small angle of attack, the error thus caused is only small.
@@ -132,7 +132,7 @@ is more accurate than equation (2.1).
 If $\nu_{1}$, is slightly different from its assigned value  $\nu_{1}^{*}$, a velocity must be chosen which, in its turn, is also slightly different from its assigned value in order to obtain its correct range. Again we have
 
 \begin{equation}
-  X=f(v_{x}, v_{y})\quad\quad(v_{x}=v_{1}\cos\theta, v_{y}=v_{1}\sin\theta).
+  X=f(v_{x}, v_{y})\quad\quad(v_{x}=v_{1}\cos{\theta}, v_{y}=v_{1}\sin{\theta}).
 \end{equation}
 
 If $v_{x}$ and $v_{y}$ differ only slightly from their assigned values, the following
@@ -151,7 +151,7 @@ Formula (2.6) can be transformed into
 with
 
 \begin{equation}
-  \cot a = \frac{\partial f/\partial v_{y}}{\partial f/\partial v_{x}}.
+  \cot{a} = \frac{\partial f/\partial v_{y}}{\partial f/\partial v_{x}}.
 \end{equation}
 
 Thus a given range depends only on the rocket velocity in the direction $a$. We eliminate the influence of the angle of the trajectory tangent if we position the base $M$ so that the straight line joining $M$ and the rocket at the time of cut-off contains the angle $a$ (instead of $v_{1}^{*}$) with the vertical. A corresponding correction is not possible with an integrating device fixed to the axis of the rocket. The above partial derivatives were obtained from trajectory calculations.
@@ -187,7 +187,7 @@ The guide-plane was produced as follows (Fig. 9): A transmitter with a Frequency
 
 The position of the guide-plane was monitored by a control receiver arranged in the desired direction of the guide-plane. At the receiver output in the rocket a voltage was obtained whose positive or negative sign depended on the lateral position (right or left) of the rocket and was proportional to its angular position $\varepsilon$. This voltage was, via a stabilizer network, fed into the amplifier for the control in yaw. This network formed beside the $\varepsilon$ signal also an isodrome control because, in the case of a pure angle control (including its derivatives), the rocket, under the influence of lateral forces or of a gyro deviation, travels at a certain distance parallel to the guide-plane. The isodrome signal destabilized the rocket and therefore had to be chosen sufficiently weak. The guide-plane system was, like all other radio equipments for the V-2, developed for ten frequencies in order to dodge interference.
 
-\subsection{The Control Equations for the V/2 Automatic Pilot and Yaw Control with the Guide-Plane}
+\subsection[The Control Equations for the V-2 Automatic Pilot and Yaw Control with the Guide-Plane]{The Control Equations for the V-2 Automatic Pilot and\\Yaw Control with the Guide-Plane}
 
 Now we shall consider the problem of finding a suitable form of control equations. The three dimensional motion of a rocket with its six degrees of freedom can be described by six simultaneous differential equations of the second order. The coupling of these equations is considerably reduced if the rocket — like the V-2 — does not roll (this was another reason for aiming at a good stability in roll). It was found that the remaining coupling between pitch and yaw control could be neglected for a rocket with the aerodynamic characteristics and the trajectory of the V-2, so that the motion of the V-2 could be considered separately in each plane.
 
@@ -218,16 +218,16 @@ where
   \item $\beta=$ controller angle,
   \item $m=$ mass of the rocket,
   \item $T=$ thrust,
-  \item $D^{*}\dfrac{d\varphi}{dt}\approx=\dfrac{\partial cl}{a}S\dfrac{\rho}{2}v^{2}\dfrac{s^{2}_{1}}{v}\dfrac{d\varphi}{dt}$ damping force,
-  \item $\delta^{*}\dfrac{d\varphi}{dt}\approx=\dfrac{\partial cl}{a}S\dfrac{\rho}{2}v^{2}\dfrac{s^{2}_{1}}{v}\dfrac{d\varphi}{dt}$ damping moment,
-  \item $s_{1}/s_{2}=$ distance between the centre of gravity and the aerodynamic centre,
+  \item $D^{*}\dfrac{d\varphi}{dt}\approx\dfrac{\partial cl}{a}S\dfrac{\rho}{2}v^{2}\dfrac{s^{2}_{1}}{v}\dfrac{d\varphi}{dt}$ damping force,
+  \item $\delta^{*}\dfrac{d\varphi}{dt}\approx\dfrac{\partial cl}{a}S\dfrac{\rho}{2}v^{2}\dfrac{s^{2}_{1}}{v}\dfrac{d\varphi}{dt}$ damping moment,
+  \item $s_{1}-s_{2}=$ distance between the centre of gravity and the aerodynamic centre,
   \item $s_{3}=$ distance between the centre of gravity and the aerodynamic centre of vanes.
 \end{enumerate}
 
 The angle of attack is
 
 \begin{equation}
-  a=\dfrac{w-dz/dt}{v}+\varphi,
+  a=\dfrac{w-dz/ dt}{v}+\varphi,
 \end{equation}
 
 where
@@ -314,7 +314,7 @@ The denominator term of the guide-plane signal calls for the following remarks: 
 
 In spite of many efforts we did not succeed in making the lateral control of the rocket really stable during the last seconds before all-burnt. Although the rocket always remained in close proximity to the guide-plane, we often observed an angle between the trajectory tangent at all-burnt and the guide-plane, which could not be neglected. The systems of equations for the control in roll and pitch are somewhat different from those for the control in yaw, but the difference is not material and, therefore, we do not consider them here.
 
-\subsection{The Methods Used for Stability Control. — Numerical Methods and Analogue Computers}
+\subsection[The Methods Used for Stability Control. — Numerical Methods and Analogue Computers]{The Methods Used for Stability Control. — Numerical\\Methods and Analogue Computers}
 
 The numerical investigations of the stability problem were almost exclusively carried out by the method of small disturbances, i.e. the roots of the characteristic equation of the system of differential equations were examined. For this purpose, the method of examining the determinant of the highest order did not appear to be particularly suitable; instead, damping regimes were calculated specially, by a method using the conditions for the coefficients. The results ot this method may be explained in a few words: if for instance the other coefficients of the guide-plane control are given, the limits are obtained with which $b_{0}$ and $b_{10}$ may be chosen, if the damping of the oscillation should not be less than a certain value. In principle, the method requires a considerable amount ot calculation; however, approximate methods were developed to reduce the labour.
 
@@ -323,7 +323,7 @@ Investigations into the stability were also carried out with the help of the NYQ
 The stability of the pure automatic pilot control was also investigated with the help of an electro-mechanical analogue computer, because it was not possible to consider the backlask of the servo-unit and the non-linearities in the calculation. The computer was a kind of moving-coil voltmeter (Fig. 12) whose pointer had been enlarged to a pendulum. A small eddy current brake made it possible to adjust the damping of the oscillations of the pendulum. By tilting the pendulum in a plane perpendicular to its axis, its natural frequency could be altered. The following equation was obtained for the free oscillations of the pendulum:
 
 \begin{equation}
-  m_{p}^{2}p^{2}\varphi+d_{m}p\varphi+m_{p}gr\cos\gamma\cdot\varphi=0
+  m_{p}^{2}p^{2}\varphi+d_{m}p\varphi+m_{p}gr\cos{\gamma}\cdot{\varphi}=0
 \end{equation}
 
 where
@@ -336,7 +336,7 @@ The design data were chosen in such a way as to give the pendulum the particular
 In order to investigate the stability of the control system a voltage was determined, with the help of a potentiometer, which was proportional to the angle $\varphi$ between the axis of the pendulum and the vertical (the arrangement was such that this angle was identical with the angle $\varphi$ between the axis of the rocket and its assigned course). This voltage was fed into a mixer unit which operated the servo-unit. The servo-unit carried a potentiometer which produced a voltage proportional to the deflection fi of the controller this voltage exercised a proportional torque on the pendulum. The hinge-moment set up at the servo-unit during flight was imitated by a spring coupling. According to the above the equations for the whole system were:
 
 \begin{equation}
-  m_{p}^{2}p^{2}\varphi+d_{m}p\varphi+m_{p}gr\cos\gamma\cdot\varphi+k_{m}\beta=0,
+  m_{p}^{2}p^{2}\varphi+d_{m}p\varphi+m_{p}gr\cos{\gamma}\cdot{\varphi}+k_{m}\beta=0,
 \end{equation}
 
 \begin{equation}
@@ -347,12 +347,14 @@ this being identical with the system of equations for the pure automatic pilot c
 
 The imitation of the system of equations for the guide-plane control seemed to be practically impossible in an electro-mechanical analogue computer, especially because the coefficients had to be variable with time. Therefore an electronic analogue computer had to be developed for these stability investigations. This contained essentially a number of integrators and potentiometers operated by cam shafts. It was possible with the help of these potentiometers to reproduce the variation with time of the coefficients of the system of equations.
 
-Fig. 13 shows the basic diagram of the computer. One recognizes at once that the input voltage of the two integrators on the left is p-z and p-if, if one approadies the input via the integrator; by adding the voltage fed into the inputs we sec that yields:
+Fig. 13 shows the basic diagram of the computer. One recognizes at once that the input voltage of the two integrators on the left is p-z and p-if, if one approaches the input via the integrator; by adding the voltage fed into the inputs we sec that yields:
 
 \begin{equation}
+  p^{2}\varphi=-\delta p\varphi-c_{1}\varphi+kpz-kw-c_{2}\beta,
 \end{equation}
 
 \begin{equation}
+  p^{2}z=Dp\varphi+C_{1}\varphi-Kpz+Kw+C_{2}\beta.
 \end{equation}
 
 The analogue computer thus imitates the equations of the motion of the rocket. The control equation (3.6) is represented by the control elements themselves.
@@ -364,6 +366,7 @@ Between the output of the analogue computer and the input of the guide-plane rec
 The integrators consisted of capacitors which were charged via resistances. Fig. 14 shows the principle. The condenser voltage is fed-back into the input circuit via a buffer amplifier. Thus we have
 
 \begin{equation}
+  U_{a}=\frac{1}{pC}\frac{U_{e}}{R}G
 \end{equation}
 
 as long as one operates on the linear part of the amplifier characteristic. If the amplification of the feed-back-loop is somewhat different from 1 the integration is no longer ideal; however, it was possible without great difficulty to keep the time constant greater than ten minutes for half an hour if the resistance $R$ was not too small.
@@ -395,6 +398,7 @@ In order to remedy this, the following control system without radio was develope
 The pick-up of the integrator was mounted on this platform in such a way as to measure the component of the rocket acceleration in the direction a, which was used as measuring direction for the measurement of the rocket velocity by radio. Thus the determination of the fuel cut-off time by means of the integrator becomes theoretically equivalent to its determination by means of radio measurement. Only objection: the term for the correction of gravity which takes the form of
 
 \begin{equation}
+  v_{g}=g\cos{a}\cdot{t_{1}^{*}}
 \end{equation}
 
 is exact only if the time $t_{1}$, up to all-burnt docs not differ from its value $t_{1}^{*}$ used
@@ -403,6 +407,7 @@ in the calculation.
 For additional lateral guidance — substitute for guide-plane control — a so-called lateral integrator was developed. An acceleration pick-up was mounted on the stabilized platform in such a way as to measure the acceleration perpendicular to the plane of the trajectory. The pick-up produced a current proportional to this acceleration. A network which in principle performed a double integration of this current yielded the expression
 
 \begin{equation}
+  b_{0}z(1+b_{10}p)
 \end{equation}
 
 which was used for the control instead of the guide-plane signal. It was not intended to use an integral signal for the time being. The probable error of the firings without additional guidance (only a limited number was available) amounted to
@@ -426,24 +431,25 @@ The change of direction in pitch was carried out as follows: a motor rotated the
 
 The simple co-ordination of gyro and supporting motor on which our description is based, no longer holds in the case of the changes in direction, but this is not a fundamental difficulty.
 
-Fig. 17 shows the lateral integrator. A moving coil which dips into a magnet - the system was similar to a permanent dynamic loudspeaker — was built into the zero branch line of an emergency bridge circuit. Between the opposite points of the bridge and the moving coil is a network. One of the branches of the bridge is replaced by a switch which opens if the depth of the moving coil in the magnet exceeds a certain value. If the apparatus is switched on the coil vibrates with a relatively high frequency about the position thus determined. The mean value of the current in the coil is proportional to the acceleration exerted on the coil in the direction of its axis. Its polarity changes with the direction of the acceleration $i_{1}\approx d^{2}z/dt^{2}$.
+Fig. 17 shows the lateral integrator. A moving coil which dips into a magnet - the system was similar to a permanent dynamic loudspeaker — was built into the zero branch line of an emergency bridge circuit. Between the opposite points of the bridge and the moving coil is a network. One of the branches of the bridge is replaced by a switch which opens if the depth of the moving coil in the magnet exceeds a certain value. If the apparatus is switched on the coil vibrates with a relatively high frequency about the position thus determined. The mean value of the current in the coil is proportional to the acceleration exerted on the coil in the direction of its axis. Its polarity changes with the direction of the acceleration $i_{1}\sim d^{2}z/dt^{2}$.
 
 The voltage at the terminals a a of the network is
 
 \begin{equation}
+  U_{2}=\frac{1}{C_{1}C_{2}R_{2}}\int\int i_{1}dt\cdot dt+C_{1}(R_{1}+R_{2})\int i_{1}dt
 \end{equation}
 
 or
 
 \begin{equation}
-  .
+  U_{2}=kz\left[1+p(C_{1}R_{1}+C_{1}R_{2})\right]  .
 \end{equation}
 
 The voltage $U_{2}$, thus contains a component proportional to $z$ and another proportional to $dz/dt$. A signal was obtained similar to the one supplied by the guide-plane receiver, feeding $U_{2}$ into an amplifier whose gain was varied by means of a cam shaft driven potentiometer. The output voltage of the amplifier was fed into the mixer unit.
 
 A moving coil system pick-up would have given too large a systematic error. A component of the longitudinal acceleration proportional to the angle of deflection would have been included in the measurement. If a system had been chosen which avoided the vibration of the moving coil, friction would have been intolerable.
 
-\section{Special Equipment for the Control of the V-2 which was in Course of Development}
+\section[Special Equipment for the Control of the V-2 which was in Course of Development]{Special Equipment for the Control of the V-2 which\\was in Course of Development}
 
 \subsection{The Guide-Line Control}
 
@@ -455,22 +461,33 @@ receiver determined the angular distance between the pilot beam and the radius
 vector to the rocket as an altitude component $\varepsilon_{h}$ and a lateral component $\varepsilon_{v}$. It was similar in operation to the receiver of the radar sets. Due to the horizontal polarization of its aerial, the output voltage of the receiver — making certain approximations — was
 
 \begin{equation}
+  U_{3}=k_{1}(2\varepsilon_{v}\sin{\omega t}+\varepsilon\cos{\omega t})+k_{\text{II}}\cos{2\omega t},
 \end{equation}
 
-where $\omega=$ frequency of rotation of dipole. The term $k_{\text{I}}$ is led to two phase- sensitive rectifier circuits, into which are fed additional voltages $k_{\text{III}}\cos\omega t$ and  $k_{\text{III}}\sin\omega t$ respectively. At the output the circuits supplied directional voltages proportional to $\varepsilon_{h}$ and $\varepsilon_{v}$ in amplitude. The voltages $k_{\text{III}}\cos\omega t$ and $k_{\text{III}}\sin\omega t$ were obtained from $k_{\text{II}}\cos2\omega t$  by frequency division. Since no experience was available as to how a guide-plane control device would behave when the guide-plane was being turned, the first lay-out of this set was planned so that the yaw control signal would control the rocket laterally, whereas the pitch control signal was transferred to the ground and this made the reflector follow the rocket vertically. This set was under trial, but has not yet been used for the actual control of a rocket. We were anxious to know whether the mechanical accuracy of the large 7 m parabolic mirror would be sufficient for following the change of direction without trouble.
+where $\omega=$ frequency of rotation of dipole. The term $k_{\text{I}}$ is led to two phase- sensitive rectifier circuits, into which are fed additional voltages $k_{\text{III}}\cos{\omega t}$ and  $k_{\text{III}}\sin{\omega t}$ respectively. At the output the circuits supplied directional voltages proportional to $\varepsilon_{h}$ and $\varepsilon_{v}$ in amplitude. The voltages $k_{\text{III}}\cos{\omega t}$ and $k_{\text{III}}\sin{\omega t}$ were obtained from $k_{\text{II}}\cos{2\omega t}$  by frequency division. Since no experience was available as to how a guide-plane control device would behave when the guide-plane was being turned, the first lay-out of this set was planned so that the yaw control signal would control the rocket laterally, whereas the pitch control signal was transferred to the ground and this made the reflector follow the rocket vertically. This set was under trial, but has not yet been used for the actual control of a rocket. We were anxious to know whether the mechanical accuracy of the large 7 m parabolic mirror would be sufficient for following the change of direction without trouble.
 
 A radio pitch control would have had the important advantage that the location of the stationary equipment on the ground would have become uncritical for the radio measurement of the velocity.
 
-\subsection{Additional Apparatus for Improving the Accuracy of the All-Burnt Signal}
+\subsection[Additional Apparatus for Improving the Accuracy of the All-Burnt Signal]{Additional Apparatus for Improving the Accuracy of the\\All-Burnt Signal}
 
 The range of the V-2 depended, apart from the all-burnt velocity and its direction, primarily upon the co-ordinates of the all-burnt spot $x_{1}$ and $y_{1}$ which normally deviate somewhat from their assigned values. For a better approximation we may replace equation (2.6) by the following relation:
 
 \begin{equation}
+  X=x_{1}+\frac{\partial f}{\partial y_{1}}+\frac{\partial f}{\partial v_{x}}\partial v_{x}+E_{2}
 \end{equation}
 
 ($E_{2}=$ a numerical value). Transforming this equation as was done with equation (2.4), we get
 
 \begin{equation}
+  X=k_{1}v_{a}+k_{2}r_{\delta}+E_{2},
+\end{equation}
+
+\begin{equation}
+  k_{2}=\sqrt{1+(\partial f/\partial y)^{2}},
+\end{equation}
+
+\begin{equation}
+  \cot{\delta}=\partial  f/ \partial y.
 \end{equation}
 
 Thus it is sufficient to measure the component $r_{\delta}$ of the distance covered by the rocket in a direction inclined at an angle $\delta$ with the vertical, and at an angle $\Theta$) with the relevant plane of yaw control, and to consider this component as the so-called ``way-correction", when determining the all-burnt point. The electronic ``longitudinal integration method" makes it possible to determine $r_{\delta}$ in a simple manner: a second pick-up, which measures the acceleration in the direction $\delta$, is placed on the stabilized platform, and the resulting current is integrated twice.
@@ -486,6 +503,7 @@ The deviation of the distance all-burnt point-launching base from its calculated
 Instead of (5.3) we can, therefore, write approximately
 
 \begin{equation}
+  X\approx k_{1}v_{a}+k_{3}(t_{1}-t_{1}^{*})+E_{3}.
 \end{equation}
 
 With regard to the radio cut-off procedure, the frequency of the WIEN bridge was changed by a synchron-motor which began to rotate at the moment of launching. The first firing tests with this arrangement yielded satisfactory results.
